@@ -409,8 +409,8 @@ namespace CryptoNote
         {0x48, 0x4f, 0x4c, 0x44, 0x4d, 0x45, 0x4d, 0x59, 0x53, 0x57, 0x45, 0x45, 0x54, 0x58, 0x4f, 0x58}};
 
     const char *const SEED_NODES[] = {
-        "149.28.168.93:24250", // sydney
-        "202.182.111.235:24250", // tokyo
+        "149.28.168.93:12897", // sydney
+        "202.182.111.235:12897", // tokyo
    
     };
 } // namespace CryptoNote
