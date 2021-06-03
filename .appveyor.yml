@@ -23,7 +23,7 @@ build_script:
   - md build
   - cd build
   - cmake -G "Visual Studio 16 2019" -A x64 .. -DARCH=default -DOPENSSL_ROOT_DIR=C:\OpenSSL-v111-Win64
-  - MSBuild TurtleCoin.sln /p:CLToolExe=clcache.exe /p:CLToolPath=c:\Python37\Scripts\ /p:Configuration=Release /m
+  - MSBuild CuddleCoin.sln /p:CLToolExe=clcache.exe /p:CLToolPath=c:\Python37\Scripts\ /p:Configuration=Release /m
   - src\Release\cryptotest.exe
 
 after_build:

@@ -261,7 +261,7 @@ jobs:
           $env:CLCACHE_DIR = "$env:GITHUB_WORKSPACE\clcache"
           $env:PATH = "$env:PATH;$env:MSBUILD_PATH"
           cd build
-          MSBuild TurtleCoin.sln /p:CLToolExe=clcache.exe /p:Configuration=Release /p:PlatformToolset=v141 /m
+          MSBuild CuddleCoin.sln /p:CLToolExe=clcache.exe /p:Configuration=Release /p:PlatformToolset=v141 /m
 
       # Test the crypto
       - name: Test Crypto
