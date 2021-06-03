@@ -45,8 +45,8 @@ namespace CryptoNote
         const size_t BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3 = 11;
 
         // MONEY_SUPPLY - total number coins to be generated
-        const uint64_t MONEY_SUPPLY = UINT64_C(7863173970000);
-
+        const uint64_t MONEY_SUPPLY = UINT64_C(788226068000);
+        
         const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX = 0;
 
         const size_t ZAWY_DIFFICULTY_V2 = 0;
@@ -388,6 +388,7 @@ namespace CryptoNote
     const char *const SEED_NODES[] = {
         "149.28.168.93:12897", // sydney
         "202.182.111.235:12897", // tokyo
+        "58.105.212.31:12897", // melbourne
 
     };
 } // namespace CryptoNote
