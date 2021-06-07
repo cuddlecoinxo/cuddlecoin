@@ -1,4 +1,4 @@
-#### CuddleCoin is a fun, fast, and easy way to send money to friends and businesses
+#### CuddleCoin is cryptocurrency that's made for giving. It's safe, fast, fun and reliable. Send some CuddleCoins to your friends today to let them know you care. <3
 
 ### Contributing to CuddleCoin
 
