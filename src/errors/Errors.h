@@ -1,4 +1,5 @@
-// Copyright (c) 2018-2020, The TurtleCoin Developers
+// Copyright (c) 2018-2019, The TurtleCoin Developers
+// Copyright (c) 2018-2019, 2ACoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -186,12 +187,12 @@ enum ErrorCode
 
     /* Value given is negative, but must be >= 0
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with cuddlecoin-wallet-backend-js */
     NEGATIVE_VALUE_GIVEN = 46,
 
     /* Key is not 64 char hex
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with cuddlecoin-wallet-backend-js */
     INVALID_KEY_FORMAT = 47,
 
     /* Hash not 64 chars */
@@ -202,7 +203,7 @@ enum ErrorCode
 
     /* Number is a float, not an integer
        NOTE: Not used in WalletBackend, only here to maintain API compatibility
-       with turtlecoin-wallet-backend-js */
+       with cuddlecoin-wallet-backend-js */
     NON_INTEGER_GIVEN = 50,
 
     /* Not on ed25519 curve */
@@ -237,30 +238,6 @@ enum ErrorCode
     /* The amount given does not have only a single significant digit - i.e.,
      * it cannot be used directly as a transaction input/output amount */
     AMOUNT_UGLY = 59,
-
-    /* The API requests a body */
-    API_BODY_REQUIRED = 60,
-
-    /* The API does not have the block explorer enabled */
-    API_BLOCKEXPLORER_DISABLED = 61,
-
-    /* The daemon must be synced to use this method */
-    API_NODE_NOT_SYNCED = 62,
-
-    /* An argument supplied to the API endpoint is invalid */
-    API_INVALID_ARGUMENT = 63,
-
-    /* An internal API error occurred */
-    API_INTERNAL_ERROR = 64,
-
-    /* Could not add transaction to the transaction pool via API */
-    API_TRANSACTION_POOL_INSERT_FAILED = 65,
-
-    /* Could not add candidate block to blockchain via API */
-    API_BLOCK_NOT_ACCEPTED = 66,
-
-    /* Could not find the requested item */
-    API_HASH_NOT_FOUND = 67,
 };
 
 class Error

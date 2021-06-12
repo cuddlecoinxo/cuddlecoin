@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
+// Copyright (c) 2018-2019, 2ACoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -53,7 +54,7 @@ namespace CryptoNote
 
     bool Currency::generateGenesisBlock()
     {
-        genesisBlockTemplate = BlockTemplate {};
+        genesisBlockTemplate = BlockTemplate{};
 
         std::string genesisCoinbaseTxHex = CryptoNote::parameters::GENESIS_COINBASE_TX_HEX;
         BinaryArray minerTxBlob;
@@ -127,7 +128,12 @@ namespace CryptoNote
 
     size_t Currency::difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion, uint32_t height) const
     {
-        if (height >= CryptoNote::parameters::LWMA_2_DIFFICULTY_BLOCK_INDEX)
+        if (height >= CryptoNote::parameters::LWMA_2_DIFFICULTY_BLOCK_INDEX_V3)
+        {
+			// special block count for cuddlecoin
+            return CryptoNote::parameters::DIFFICULTY_BLOCKS_COUNT_V4;
+        }
+        else if (height >= CryptoNote::parameters::LWMA_2_DIFFICULTY_BLOCK_INDEX)
         {
             return CryptoNote::parameters::DIFFICULTY_BLOCKS_COUNT_V3;
         }
@@ -165,17 +171,15 @@ namespace CryptoNote
         {
             return m_upgradeHeightV4;
         }
+        /* skipped Block 5 for CuddleCoin  
         else if (majorVersion == BLOCK_MAJOR_VERSION_5)
         {
             return m_upgradeHeightV5;
         }
+        */
         else if (majorVersion == BLOCK_MAJOR_VERSION_6)
         {
             return m_upgradeHeightV6;
-        }
-        else if (majorVersion == BLOCK_MAJOR_VERSION_7)
-        {
-            return m_upgradeHeightV7;
         }
         else
         {
@@ -314,8 +318,8 @@ namespace CryptoNote
 
             if (!(r))
             {
-                logger(ERROR, BRIGHT_RED) << "while creating outs: failed to generate_key_derivation(" << publicViewKey
-                                          << ", " << txkey.secretKey << ")";
+                logger(ERROR, BRIGHT_RED) << "while creating outs: failed to generate_key_derivation("
+                                          << publicViewKey << ", " << txkey.secretKey << ")";
                 return false;
             }
 
@@ -812,7 +816,6 @@ namespace CryptoNote
         m_upgradeHeightV4(currency.m_upgradeHeightV4),
         m_upgradeHeightV5(currency.m_upgradeHeightV5),
         m_upgradeHeightV6(currency.m_upgradeHeightV6),
-        m_upgradeHeightV7(currency.m_upgradeHeightV7),
         m_upgradeVotingThreshold(currency.m_upgradeVotingThreshold),
         m_upgradeVotingWindow(currency.m_upgradeVotingWindow),
         m_upgradeWindow(currency.m_upgradeWindow),
@@ -880,7 +883,6 @@ namespace CryptoNote
         upgradeHeightV4(parameters::UPGRADE_HEIGHT_V4);
         upgradeHeightV5(parameters::UPGRADE_HEIGHT_V5);
         upgradeHeightV6(parameters::UPGRADE_HEIGHT_V6);
-        upgradeHeightV7(parameters::UPGRADE_HEIGHT_V7);
         upgradeVotingThreshold(parameters::UPGRADE_VOTING_THRESHOLD);
         upgradeVotingWindow(parameters::UPGRADE_VOTING_WINDOW);
         upgradeWindow(parameters::UPGRADE_WINDOW);
@@ -899,7 +901,9 @@ namespace CryptoNote
         const auto publicViewKey = Constants::NULL_PUBLIC_KEY;
         const auto publicSpendKey = Constants::NULL_PUBLIC_KEY;
 
-        m_currency.constructMinerTx(1, 0, 0, 0, 0, 0, publicViewKey, publicSpendKey, tx);
+        m_currency.constructMinerTx(
+            1, 0, 0, 0, 0, 0, publicViewKey, publicSpendKey, tx
+        );
 
         return tx;
     }

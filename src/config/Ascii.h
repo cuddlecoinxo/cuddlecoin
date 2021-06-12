@@ -1,4 +1,5 @@
 // Copyright (c) 2018, The TurtleCoin Developers
+// Copyright (c) 2018-2019, 2ACoin Developers
 //
 // Please see the included LICENSE file for more information
 
@@ -6,7 +7,7 @@
 
 #include <string>
 
-const std::string windowsAsciiArt = 
+const std::string windowsAsciiArt =
 "\n \n"
 "   _____          _     _ _       _____      _       \n"
 "  / ____|        | |   | | |     / ____|    (_)      \n"
@@ -14,19 +15,16 @@ const std::string windowsAsciiArt =
 " | |   | | | |/ _` |/ _` | |/ _ \ |    / _ \| | '_ \ \n"
 " | |___| |_| | (_| | (_| | |  __/ |___| (_) | | | | |\n"
 "  \_____\__,_|\__,_|\__,_|_|\___|\_____\___/|_|_| |_|\n";
-                                                     
-                                                     
-;
+
 
 const std::string nonWindowsAsciiArt =
-    "\n                                                                         \n"
+"\n                                                                         \n"
 " ██████╗██╗   ██╗██████╗ ██████╗ ██╗     ███████╗ ██████╗ ██████╗ ██╗███╗   ██╗\n"
 "██╔════╝██║   ██║██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝██╔═══██╗██║████╗  ██║\n"
 "██║     ██║   ██║██║  ██║██║  ██║██║     █████╗  ██║     ██║   ██║██║██╔██╗ ██║\n"
 "██║     ██║   ██║██║  ██║██║  ██║██║     ██╔══╝  ██║     ██║   ██║██║██║╚██╗██║\n"
 "╚██████╗╚██████╔╝██████╔╝██████╔╝███████╗███████╗╚██████╗╚██████╔╝██║██║ ╚████║\n"
 "╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ \n";
-                                                                               
 
 /* Windows has some characters it won't display in a terminal. If your ascii
    art works fine on Windows and Linux terminals, just replace 'asciiArt' with

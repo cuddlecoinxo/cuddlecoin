@@ -1,6 +1,7 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018-2019, The TurtleCoin Developers
+// Copyright (c) 2018-2019, 2ACoin Developers
 //
 // Please see the included LICENSE file for more information.
 
@@ -352,7 +353,7 @@ namespace CryptoNote
                 ss << "You are " << std::abs(diff) << " blocks (" << days << " days) ahead ";
             }
 
-            ss << "the current peer you're connected to. Slow and steady wins the race! ";
+            ss << "the current peer you're connected to. Please be patient! ";
 
             auto logLevel = Logging::TRACE;
             /* Log at different levels depending upon if we're ahead, behind, and if it's
@@ -986,22 +987,15 @@ namespace CryptoNote
         if (m_synchronized.compare_exchange_strong(val_expected, true))
         {
             logger(Logging::INFO) << ENDL;
-            logger(INFO, BRIGHT_MAGENTA) << "===[ " + std::string(CryptoNote::CRYPTONOTE_NAME)
-                                                + " Tip! ]============================="
-                                         << ENDL;
-            logger(INFO, WHITE) << " Always exit " + WalletConfig::daemonName + " and " + WalletConfig::walletName
-                                       + " with the \"exit\" command to preserve your chain and wallet data."
-                                << ENDL;
-            logger(INFO, WHITE) << " Use the \"help\" command to see a list of available commands." << ENDL;
-            logger(INFO, WHITE) << " Use the \"backup\" command in " + WalletConfig::walletName
-                                       + " to display your keys/seed for restoring a corrupted wallet."
-                                << ENDL;
-            logger(INFO, WHITE) << " If you need more assistance, you can contact us for support at "
-                                       + WalletConfig::contactLink
-                                << ENDL;
-            logger(INFO, BRIGHT_MAGENTA) << "===================================================" << ENDL << ENDL;
-
-            logger(INFO, BRIGHT_GREEN) << asciiArt << ENDL;
+            logger(INFO, BRIGHT_MAGENTA) << "===[ " + std::string(CryptoNote::CRYPTONOTE_NAME) 
+                                                + " Tip! ]=============================" << ENDL ;
+            logger(INFO, WHITE) << " Use the \"help\" command to see a list of available commands." << ENDL ;
+            logger(INFO, WHITE) << " Use the \"backup\" command in " + WalletConfig::walletName 
+                                                + " to display your keys/seed for restoring a corrupted wallet." << ENDL ;
+            logger(INFO, WHITE) << " Always exit " + WalletConfig::daemonName + " and " + WalletConfig::walletName 
+                                                + " with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
+            logger(INFO, WHITE) << " If you need more assistance, you can contact us for support at " + WalletConfig::contactLink << ENDL;
+            logger(INFO, BRIGHT_MAGENTA) << "===================================================" << ENDL << ENDL ;
 
             m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
         }
