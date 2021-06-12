@@ -4,10 +4,10 @@
 #define PROJECT_NAME "CuddleCoin"
 #define PROJECT_SITE "http://www.cuddlecoin.cc"
 #define PROJECT_COPYRIGHT "Copyright 2021, The CuddleCoin Developers"
-#define APP_VER_MAJOR 0
+#define APP_VER_MAJOR 1
 #define APP_VER_MINOR 1
 #define APP_VER_REV 0
-#define APP_VER_BUILD 2000
+#define APP_VER_BUILD 2021
 
 #define BUILD_COMMIT_ID "@VERSION@"
 #define PROJECT_VERSION STR(APP_VER_MAJOR) "." STR(APP_VER_MINOR) "." STR(APP_VER_REV)
