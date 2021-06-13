@@ -73,7 +73,7 @@ namespace CryptoNote
          * this value because it makes for pretty resulting fees.
          * You can read this as.. the fee per chunk is .00001000 per chunk.
          * The fee per byte is 256000 / 256 (chunk size).    */
-        const double MINIMUM_FEE_PER_BYTE_V1                         = 256000 / FEE_PER_BYTE_CHUNK_SIZE;
+        const double MINIMUM_FEE_PER_BYTE_V1                         = 500.00 / FEE_PER_BYTE_CHUNK_SIZE;
 
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                              = 0;
