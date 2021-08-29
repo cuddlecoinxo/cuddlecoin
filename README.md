@@ -1,3 +1,6 @@
+![cuddl](https://user-images.githubusercontent.com/83870593/131234676-99ea44c0-4c51-4d46-a91b-dab8ba13cbc6.png)
+
+
 ### About Cuddlecoin
 CuddleCoin is cryptocurrency that's made for giving. It's safe, fast, fun and reliable. Send your friends some CuddleCoin today to let them know you care! <3
 
