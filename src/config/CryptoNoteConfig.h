@@ -286,7 +286,8 @@ namespace CryptoNote
 
     const char* const SEED_NODES[] = {
        "149.28.168.93:12897", // sydney
-       "202.182.111.235:12897", // tokyo
+       "202.182.111.235:12897", // japan
        "58.105.212.31:12897", // melbourne
+	"136.244.86.181:12897", // germany    
       };
 } // Namespace CryptoNote
